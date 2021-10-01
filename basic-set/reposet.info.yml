@@ -9,7 +9,7 @@ metadata:
 # --- task include part
 version: "3"
 includes:
-  reposet: ../../_infra/reposet_pack/reposet.tasks.yml
+  reposet: ../_infra/reposet_pack/reposet.tasks.yml
 
 vars:
   _taskfile_: reposet.info.yml
