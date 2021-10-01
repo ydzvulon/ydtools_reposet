@@ -15,12 +15,18 @@ vars:
   _taskfile_: reposet.info.yml
   reposet__conf_map: __repos:reposet.info.yml@vars.reposet_items_yaml
   reposet_items_yaml: |-
-    rclonepy:
-      name: rclonepy
+    spur_py:
+      name: spur_py
       subdir: .
-      dirname: ./rclonepy
-      branch: main
-      remote_origin_url: git@github.com:ydlibs/rclonepy.git
+      dirname: ./spur_py
+      branch: master
+      remote_origin_url: https://github.com/ydtools/spur.py.git
+    s3path:
+      name: s3path
+      subdir: .
+      dirname: ./s3path
+      branch: master
+      remote_origin_url: https://github.com/ydtools/s3path.git
       
 tasks:
   default:
