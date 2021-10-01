@@ -1,0 +1,28 @@
+#!/usr/local/bin/task --taskfile
+
+apiVersion: projects/v1
+kind: mxk:ydt.reposet.items
+
+metadata:
+  name: reposet
+
+# --- task include part
+version: "3"
+includes:
+  reposet: ../../_infra/reposet_pack/reposet.tasks.yml
+
+vars:
+  _taskfile_: reposet.info.yml
+  reposet__conf_map: __repos:reposet.info.yml@vars.reposet_items_yaml
+  reposet_items_yaml: |-
+    rclonepy:
+      name: rclonepy
+      subdir: .
+      dirname: ./rclonepy
+      branch: main
+      remote_origin_url: git@github.com:ydlibs/rclonepy.git
+      
+tasks:
+  default:
+    silent: true
+    cmds: [{task: reposet:info}]
