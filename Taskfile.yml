@@ -1,0 +1,22 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  GREETING: Hello, World!
+
+tasks:
+  default:
+    cmds:
+      - echo "{{.GREETING}}"
+    silent: true
+
+  ci-flow:
+    desc: _
+    cmds:
+      - task ci-build
+
+  ci-build:
+    desc: _
+    cmds:
+      - task -d basic-set reposet:resolve reposet:status
